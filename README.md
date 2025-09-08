@@ -1,5 +1,5 @@
-<img width="1597" height="856" alt="Captura de tela 2025-08-12 113226" src="<img width="800" height="430" alt="image" src="https://github.com/user-attachments/assets/b787e639-87ca-42df-add7-8449f9e47009" />
-/>
+<img width="800" height="430" alt="image" src="https://github.com/user-attachments/assets/d43944f2-5a0a-42e2-b6d3-47d10a582a19" />
+
 
 # Integrantes:
 Vinicius Murtinho Vicente Rm551151 
