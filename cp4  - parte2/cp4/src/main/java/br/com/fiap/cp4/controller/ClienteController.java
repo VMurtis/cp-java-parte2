@@ -19,28 +19,25 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
-    // LISTAR
+
     @GetMapping
     public String listar(Model model) {
         model.addAttribute("clientes", clienteService.getAll());
         return "cliente_listar";
     }
 
-    // FORM ADICIONAR
     @GetMapping("/adicionar")
     public String adicionarForm(Model model) {
         model.addAttribute("clienteDto", new ClienteDto(null, "", "", "", ""));
         return "cliente_adicionar";
     }
 
-    // SALVAR
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute ClienteDto clienteDto) {
         clienteService.save(clienteDto);
         return "redirect:/clientes";
     }
 
-    // FORM EDITAR
     @GetMapping("/editar/{id}")
     public String editarForm(@PathVariable Long id, Model model) {
         Cliente cliente = clienteService.buscarPorId(id);
@@ -49,14 +46,14 @@ public class ClienteController {
         return "cliente_editar";
     }
 
-    // ATUALIZAR
+
     @PostMapping("/atualizar/{id}")
     public String atualizar(@PathVariable Long id, @ModelAttribute ClienteDto clienteDto) {
         clienteService.update(id, clienteDto);
         return "redirect:/clientes";
     }
 
-    // DELETAR
+
     @GetMapping("/deletar/{id}")
     public String deletar(@PathVariable Long id) {
         clienteService.deletar(id);
