@@ -8,6 +8,9 @@ Gustavo Bispo Cordeiro RM558515
 
 ---
 
+Link do video:https://www.youtube.com/watch?v=Oy344m50t7o
+
+
 
 
 
