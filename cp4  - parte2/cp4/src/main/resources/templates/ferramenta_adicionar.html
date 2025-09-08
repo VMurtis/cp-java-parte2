@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Ferramenta</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar">
+    <h1>Adicionar Ferramenta</h1>
+    <a class="btn" th:href="@{/ferramentas}">⬅ Voltar</a>
+</nav>
+
+<div class="form-container">
+    <form th:action="@{/ferramentas/salvar}" th:object="${ferramentaDto}" method="post">
+
+        <label>Nome:</label>
+        <input type="text" th:field="*{nome}" required />
+
+        <label>Tipo:</label>
+        <input type="text" th:field="*{tipo}" required />
+
+        <label>Tamanho:</label>
+        <input type="text" th:field="*{tamanho}" required />
+
+        <label>Preço:</label>
+        <input type="number" th:field="*{preco}" required />
+
+        <button type="submit" class="btn-submit">💾 Salvar</button>
+    </form>
+</div>
+</body>
+</html>

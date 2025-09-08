@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Ferramenta</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+<nav class="navbar">
+    <h1>Gerenciamento de Ferramenta</h1>
+    <a class="btn" th:href="@{/ferramentas/adicionar}">➕ Adicionar Ferramenta</a>
+</nav>
+
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Tamanho</th>
+            <th>Preço</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ferramenta : ${ferramentas}">
+            <td th:text="${ferramenta.id}"></td>
+            <td th:text="${ferramenta.nome}"></td>
+            <td th:text="${ferramenta.tipo}"></td>
+            <td th:text="${ferramenta.tamanho}"></td>
+            <td th:text="${ferramenta.preco}"></td>
+            <td>
+                <a class="btn-edit" th:href="@{/ferramentas/editar/{id}(id=${ferramenta.id})}">✏️ Editar</a>
+                <a class="btn-delete" th:href="@{/ferramentas/deletar/{id}(id=${ferramenta.id})}">🗑️ Excluir</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

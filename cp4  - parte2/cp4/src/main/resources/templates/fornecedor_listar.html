@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Fornecedores</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar">
+    <h1>Gerenciamento de Fornecedores</h1>
+    <a class="btn" th:href="@{/fornecedores/adicionar}">➕ Adicionar Fornecedor</a>
+</nav>
+
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CNPJ</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="fornecedor : ${fornecedores}">
+            <td th:text="${fornecedor.id}"></td>
+            <td th:text="${fornecedor.nome}"></td>
+            <td th:text="${fornecedor.cnpj}"></td>
+            <td th:text="${fornecedor.email}"></td>
+            <td th:text="${fornecedor.telefone}"></td>
+            <td>
+                <a class="btn-edit" th:href="@{/fornecedores/editar/{id}(id=${fornecedor.id})}">✏️ Editar</a>
+                <a class="btn-delete" th:href="@{/fornecedores/deletar/{id}(id=${fornecedor.id})}">🗑️ Excluir</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
